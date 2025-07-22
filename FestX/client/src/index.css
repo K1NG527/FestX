@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-zinc-950 text-zinc-100;
+  }
+
+  :root {
+    --card-bg: 240 10% 3.9%;
+    --card-fg: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --primary: 348 100% 61%;
+    --primary-hover: 348 100% 55%;
+    --input-bg: 240 3.7% 15.9%;
+    --muted-bg: 240 3.7% 15.9%;
+    --muted-fg: 240 5% 64.9%;
+  }
+}
+
+@layer components {
+  .event-card {
+    @apply bg-zinc-900 border border-zinc-800 overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px];
+  }
+  
+  .zomato-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/70;
+  }
+  
+  .zomato-card {
+    @apply border-none bg-zinc-900/70 backdrop-blur-md rounded-lg shadow-lg;
+  }
+  
+  .zomato-heading {
+    @apply text-2xl font-bold text-white tracking-tight;
+  }
+  
+  .zomato-button {
+    @apply bg-primary hover:bg-primary/90 text-white font-medium;
+  }
+  
+  .zomato-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary;
+  }
+  
+  .zomato-input {
+    @apply bg-zinc-800 border-zinc-700 text-zinc-100 placeholder:text-zinc-500 focus:border-primary focus:ring-1 focus:ring-primary;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #27272a; /* zinc-800 */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #52525b; /* zinc-600 */
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #71717a; /* zinc-500 */
+  }
+}
